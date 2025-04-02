@@ -99,3 +99,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes verticalBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+.vertical-bounce {
+  animation: verticalBounce 5s infinite ease-in-out;
+}

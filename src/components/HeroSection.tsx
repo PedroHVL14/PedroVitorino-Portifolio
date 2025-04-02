@@ -1,4 +1,3 @@
-
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -67,13 +66,13 @@ const HeroSection = () => {
           </div>
           
           <div className="flex justify-center lg:justify-end animate-scale-in" style={{ animationDelay: "0.4s" }}>
-            <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full blur-md opacity-50"></div>
-              <div className="relative bg-white p-2 rounded-full shadow-xl">
+            <div className="relative vertical-bounce">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full blur-lg opacity-60"></div>
+              <div className="relative bg-white p-2 rounded-full shadow-2xl">
                 <img 
                   src="https://i.ibb.co/ycSt07sb/photo.png" 
                   alt="Pedro Vitorino" 
-                  className="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover"
+                  className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-2 border-primary-500 shadow-lg"
                 />
               </div>
             </div>

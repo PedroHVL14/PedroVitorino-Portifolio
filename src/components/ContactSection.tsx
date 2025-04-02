@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { MapPin, Mail, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,11 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import emailjs from "emailjs-com";
 
-// These are the public keys for EmailJS
-// They are meant to be in the frontend code
-const EMAILJS_SERVICE_ID = "default_service"; // You'll need to replace this with your actual service ID
-const EMAILJS_TEMPLATE_ID = "template_contact"; // You'll need to replace this with your actual template ID
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your actual public key from EmailJS dashboard
+// Configurações do EmailJS - substitua pelos valores da sua conta
+const EMAILJS_SERVICE_ID = "service_l4i9jmf"; // Seu Service ID
+const EMAILJS_TEMPLATE_ID = "template_soooiu9"; // Seu Template ID
+const EMAILJS_PUBLIC_KEY = "Dzp-8gffo10eU_hAc"; // Sua Public Key
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -24,7 +22,7 @@ const ContactSection = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  // Initialize EmailJS on component mount
+  // Inicializa o EmailJS ao montar o componente
   useEffect(() => {
     emailjs.init(EMAILJS_PUBLIC_KEY);
   }, []);
@@ -39,7 +37,7 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Prepare the template parameters
+      // Parâmetros do template: inclui o destinatário fixo
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -48,20 +46,20 @@ const ContactSection = () => {
         to_email: "pedro.vitorino.lima@gmail.com"
       };
       
-      // Send the email using EmailJS with the updated method signature
+      // Envia o e-mail via EmailJS
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         templateParams
       );
       
-      // Show success message
+      // Mensagem de sucesso
       toast({
         title: "Mensagem enviada!",
         description: "Agradecemos pelo seu contato. Retornaremos em breve.",
       });
       
-      // Reset form data
+      // Reseta os campos do formulário
       setFormData({
         name: "",
         email: "",
@@ -69,7 +67,7 @@ const ContactSection = () => {
         message: ""
       });
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Erro ao enviar email:", error);
       toast({
         title: "Erro ao enviar mensagem",
         description: "Houve um problema ao enviar sua mensagem. Por favor, tente novamente.",
