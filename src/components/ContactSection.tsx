@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPin, Mail, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +11,7 @@ import emailjs from "emailjs-com";
 // They are meant to be in the frontend code
 const EMAILJS_SERVICE_ID = "default_service"; // You'll need to replace this with your actual service ID
 const EMAILJS_TEMPLATE_ID = "template_contact"; // You'll need to replace this with your actual template ID
-const EMAILJS_USER_ID = "YOUR_USER_ID"; // You'll need to replace this with your actual user ID
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your actual public key from EmailJS dashboard
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -23,6 +23,11 @@ const ContactSection = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }, []);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -43,12 +48,11 @@ const ContactSection = () => {
         to_email: "pedro.vitorino.lima@gmail.com"
       };
       
-      // Send the email using EmailJS
+      // Send the email using EmailJS with the updated method signature
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_USER_ID
+        templateParams
       );
       
       // Show success message
