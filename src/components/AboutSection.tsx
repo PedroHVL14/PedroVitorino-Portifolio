@@ -1,10 +1,16 @@
 
 import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 const AboutSection = () => {
   const downloadCV = () => {
-    // In a real scenario, this would download your CV file
-    alert("Em uma implementação real, isso baixaria seu CV.");
+    // Criar um link para download
+    const link = document.createElement('a');
+    link.href = '/cv-pedro-vitorino.pdf'; // Caminho para o arquivo CV
+    link.download = 'CV-Pedro-Vitorino.pdf'; // Nome do arquivo para download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -50,6 +56,7 @@ const AboutSection = () => {
                 onClick={downloadCV} 
                 className="bg-primary-600 hover:bg-primary-700 text-white"
               >
+                <Download size={18} />
                 Download CV
               </Button>
             </div>
