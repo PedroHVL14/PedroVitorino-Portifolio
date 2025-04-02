@@ -5,6 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from "emailjs-com";
+
+// These are the public keys for EmailJS
+// They are meant to be in the frontend code
+const EMAILJS_SERVICE_ID = "default_service"; // You'll need to replace this with your actual service ID
+const EMAILJS_TEMPLATE_ID = "template_contact"; // You'll need to replace this with your actual template ID
+const EMAILJS_USER_ID = "YOUR_USER_ID"; // You'll need to replace this with your actual user ID
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -22,26 +29,51 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulating form submission
-    setTimeout(() => {
+    try {
+      // Prepare the template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "pedro.vitorino.lima@gmail.com"
+      };
+      
+      // Send the email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_USER_ID
+      );
+      
+      // Show success message
       toast({
         title: "Mensagem enviada!",
         description: "Agradecemos pelo seu contato. Retornaremos em breve.",
       });
       
+      // Reset form data
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: ""
       });
-      
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Houve um problema ao enviar sua mensagem. Por favor, tente novamente.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
   
   return (
