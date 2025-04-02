@@ -8,11 +8,11 @@ const skills = [
   },
   {
     category: "Back-End",
-    items: ["Python", "Node.js (Básico)", "REST APIs", "Firebase"]
+    items: ["Python", "Node.js", "REST APIs", "Firebase"]
   },
   {
     category: "Ferramentas",
-    items: ["Git/GitHub", "VS Code", "Figma (Básico)", "NPM/Yarn", "Chrome DevTools"]
+    items: ["Git/GitHub", "VS Code", "Figma", "NPM/Yarn", "Chrome DevTools"]
   },
   {
     category: "Soft Skills",

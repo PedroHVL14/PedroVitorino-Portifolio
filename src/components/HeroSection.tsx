@@ -71,7 +71,7 @@ const HeroSection = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full blur-md opacity-50"></div>
               <div className="relative bg-white p-2 rounded-full shadow-xl">
                 <img 
-                  src="https://i.ibb.co/ycSt07s/photo.png" 
+                  src="https://i.ibb.co/ycSt07sb/photo.png" 
                   alt="Pedro Vitorino" 
                   className="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover"
                 />
