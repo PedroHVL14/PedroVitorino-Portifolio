@@ -7,17 +7,18 @@ const projects = [
   {
     id: 1,
     title: "E-commerce Responsivo",
+
     description: "Site de e-commerce completo com carrinho de compras, páginas de produto e processo de checkout.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    image: "https://private-user-images.githubusercontent.com/115195952/429708424-2060a6d4-6098-4824-8534-ca18a64b9b55.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM2Mzg5NzcsIm5iZiI6MTc0MzYzODY3NywicGF0aCI6Ii8xMTUxOTU5NTIvNDI5NzA4NDI0LTIwNjBhNmQ0LTYwOTgtNDgyNC04NTM0LWNhMThhNjRiOWI1NS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQwM1QwMDA0MzdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iZTM2ODcyMjZkNThiNGQ0YzZiYTc4NWRmNDdlMGI0MWYxODVjMzE2ZjJiZjVmMjEzNjU0MWFjMjg3NDE2ZWJlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.rb0hTxckjzQ-fr01otI9UrjXfPcxan4ajRI1kf4hpB4",
     tags: ["React", "Tailwind CSS", "Node.js"],
-    demoLink: "#",
-    codeLink: "#"
+    demoLink: "https://compra-certa-online.lovable.app/",
+    codeLink: "https://github.com/PedroHVL14/Projeto-E-Commerce-Compra-Certa"
   },
   {
     id: 2,
     title: "Dashboard Administrativo",
     description: "Painel administrativo para gerenciamento de conteúdo com gráficos, tabelas e formulários.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    image: "images.unsplash.com/photo-1461749280684-dccba630e2f6",
     tags: ["React", "Chart.js", "Material UI"],
     demoLink: "#",
     codeLink: "#"
@@ -55,17 +56,17 @@ const ProjectsSection = () => {
             Confira alguns dos projetos que desenvolvi com React
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <div 
+            <div
               key={project.id}
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-100"
             >
               <div className="h-56 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                 />
               </div>
@@ -78,7 +79,7 @@ const ProjectsSection = () => {
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <span 
+                    <span
                       key={tagIndex}
                       className="bg-primary-50 text-primary-700 text-xs px-3 py-1 rounded-full"
                     >
@@ -92,7 +93,11 @@ const ProjectsSection = () => {
                     className="flex items-center gap-2 border-primary-600 text-primary-600 hover:bg-primary-50"
                     asChild
                   >
-                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={project.demoLink.startsWith("http") ? project.demoLink : `https://${project.demoLink}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink size={16} />
                       <span>Demo</span>
                     </a>
@@ -112,9 +117,9 @@ const ProjectsSection = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
-          <Button 
+          <Button
             className="bg-primary-600 hover:bg-primary-700 text-white"
             size="lg"
             asChild
