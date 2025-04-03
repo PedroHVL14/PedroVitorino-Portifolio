@@ -9,7 +9,7 @@ const projects = [
     title: "E-commerce Responsivo",
 
     description: "Site de e-commerce completo com carrinho de compras, páginas de produto e processo de checkout.",
-    image: "https://private-user-images.githubusercontent.com/115195952/429708424-2060a6d4-6098-4824-8534-ca18a64b9b55.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM2Mzg5NzcsIm5iZiI6MTc0MzYzODY3NywicGF0aCI6Ii8xMTUxOTU5NTIvNDI5NzA4NDI0LTIwNjBhNmQ0LTYwOTgtNDgyNC04NTM0LWNhMThhNjRiOWI1NS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQwM1QwMDA0MzdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iZTM2ODcyMjZkNThiNGQ0YzZiYTc4NWRmNDdlMGI0MWYxODVjMzE2ZjJiZjVmMjEzNjU0MWFjMjg3NDE2ZWJlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.rb0hTxckjzQ-fr01otI9UrjXfPcxan4ajRI1kf4hpB4",
+    image: "https://i.ibb.co/5W3GfN1T/Captura-de-tela-2025-04-02-205138.png",
     tags: ["React", "Tailwind CSS", "Node.js"],
     demoLink: "https://compra-certa-online.lovable.app/",
     codeLink: "https://github.com/PedroHVL14/Projeto-E-Commerce-Compra-Certa"
@@ -18,28 +18,28 @@ const projects = [
     id: 2,
     title: "Dashboard Administrativo",
     description: "Painel administrativo para gerenciamento de conteúdo com gráficos, tabelas e formulários.",
-    image: "images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    image: "https://i.ibb.co/Bhdnpbs/Captura-de-tela-2025-04-03-144831.png",
     tags: ["React", "Chart.js", "Material UI"],
-    demoLink: "#",
-    codeLink: "#"
+    demoLink: "https://content-compass-admin.lovable.app/",
+    codeLink: "https://github.com/PedroHVL14/React-Projeto_Dashboard-Admin"
   },
   {
     id: 3,
     title: "Aplicativo de Tarefas",
     description: "Aplicativo para gerenciamento de tarefas com categorias, prioridades e lembretes.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    image: "https://i.ibb.co/KpP8QG8Y/Captura-de-tela-2025-04-03-153658.png",
     tags: ["React", "Firebase", "Styled Components"],
-    demoLink: "#",
-    codeLink: "#"
+    demoLink: "https://github.com/PedroHVL14/React_Projeto-Organizer",
+    codeLink: "https://github.com/PedroHVL14/React_Projeto-Organizer"
   },
   {
     id: 4,
     title: "Site Institucional",
     description: "Site institucional para empresa de tecnologia com seções de serviços, portfolio e contato.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    image: "https://i.ibb.co/xKTKHzzr/image.png",
     tags: ["React", "GSAP", "Tailwind CSS"],
-    demoLink: "#",
-    codeLink: "#"
+    demoLink: "https://tech-spark-hub.lovable.app/",
+    codeLink: "https://github.com/PedroHVL14/React-Projeto_Site-Institucional"
   }
 ];
 
@@ -53,7 +53,7 @@ const ProjectsSection = () => {
           </h2>
           <div className="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600">
-            Confira alguns dos projetos que desenvolvi com React
+            Confira alguns dos projetos que desenvolvi
           </p>
         </div>
 

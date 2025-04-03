@@ -14,7 +14,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-primary-50 to-white">
+    <section id="about" className="py-20 bg-gradient-to-br">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
@@ -64,7 +64,7 @@ const AboutSection = () => {
                 className="bg-primary-600 hover:bg-primary-700 text-white transition-all transform hover:scale-105 duration-300"
               >
                 <Download size={18} />
-                Download CV
+                Download Currículo
               </Button>
             </div>
           </div>

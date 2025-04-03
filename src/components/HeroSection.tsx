@@ -37,7 +37,7 @@ const HeroSection = () => {
                 Pedro Vitorino
               </h1>
               <p className="text-2xl md:text-3xl font-medium text-gray-700 mt-2">
-                Desenvolvedor Front-End React
+                Desenvolvedor
               </p>
             </div>
             
@@ -79,7 +79,8 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Exibe o botão "Descubra mais" apenas em telas md ou maiores */}
+        <div className="hidden md:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button 
             onClick={() => {
               const aboutSection = document.getElementById("about");
